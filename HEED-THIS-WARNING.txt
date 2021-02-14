@@ -1,0 +1,11 @@
+
+
+    The Yaesu FT-757GX does NOT operate with RS232 level voltages.  You MUST 
+    USE one of Yaesu's RS-232-to-TTL interfaces or buy or build your own.
+
+    SEE OCTOBER 1985 QST ARTICLE PAGE 38 TITLED, "A CAT Control System" for
+    the best interface, which uses an optoisolator.
+
+    Use of this program is at your own risk.
+
+

@@ -4,11 +4,14 @@ NO WARRANTY
 NO WARRANTY
 NO WARRANTY
 
+USE AT YOUR OWN RISK
+
 Yaesu FT757-GX-1 program by N4LSJ
 
 This program works for the FT-757GX -MARK 1- only.  The MK2 programming
 is not quite the same, so this program is not considered compatible
-with the FT-757GX 2.
+with the FT-757GX 2.   This program is for experimental use and is
+not professional programming.
 
 SEE OCTOBER 1985 QST ARTICLE PAGE 38 TITLED, "A CAT Control System"
 
@@ -20,6 +23,9 @@ noise for the overly sensitive TTL level serial interface.
 The optoisolator circuit is driven by TTL level, not actual RS-232,
 so you'll want to use TTL level serial, such as from an RS-232 to
 TTL converter.  Don't wire the RS-232 straight to the circuit.
+
+The FT757-GX speaks at one speed: 4800 baud.  Use stty or some such
+to set your port speed before starting the program.
 
 The connector on the back of the YAESU FT-757GX is called a
 3-pin JST-XH with 2.54mm pitch
