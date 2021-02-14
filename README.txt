@@ -6,6 +6,8 @@ NO WARRANTY
 
 USE AT YOUR OWN RISK
 
+        *******  NO SUPPORT OFFERED  *******
+
 Yaesu FT757-GX-1 program by N4LSJ
 
 This program works for the FT-757GX -MARK 1- only.  The MK2 programming

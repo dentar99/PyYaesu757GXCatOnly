@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 #
+# Author: Tom N4LSJ -- EXPERIMENTAL CODE ONLY FOR TINKERING
+#                   -- USE AT YOUR OWN RISK ONLY
+#                   -- AUTHOR ASSUMES NO LIABILITY
+# 
 # Yaesu FT757-GX-1 program
 # 
 # This program works for the FT-757GX -MARK 1- only.  The MK2 programming is
