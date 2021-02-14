@@ -1,5 +1,3 @@
-![PyYaesu757GXCatOnly](https://user-images.githubusercontent.com/76819904/107883968-2f396980-6ec0-11eb-998e-cba89e6d7e38.png)
-
 
 NO WARRANTY
 NO WARRANTY
@@ -10,6 +8,8 @@ NO WARRANTY
 USE AT YOUR OWN RISK
 
         *******  NO SUPPORT OFFERED  *******
+
+![PyYaesu757GXCatOnly](https://user-images.githubusercontent.com/76819904/107883968-2f396980-6ec0-11eb-998e-cba89e6d7e38.png)
 
 Yaesu FT757-GX-1 program by N4LSJ
 
