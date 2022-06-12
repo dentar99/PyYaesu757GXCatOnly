@@ -192,10 +192,12 @@ def hover(widg,txt):
     widg.bind("<Leave>",lambda evt, tt="": hovertxt(tt))
 
 def SYNC_RADIO_VFOS_TO_DISPLAY():
+    global thisvfo
     CHFREQ('r',float(ifreq.get()))
     SIMPLECMD(VFOAB)
     CHFREQ('t',float(itfreq.get()))
     SIMPLECMD(VFOAB)
+    thisvfo = float(ifreq.get())
 
 def SHOWSPLIT():
 
@@ -323,7 +325,7 @@ def VFOSLINKED():
     else:
         return False
 
-def afterspinsync(*args):
+def postqsysync(*args):
     global afspinid
     if (afspinid != ''):
         print("after spin "+ str(afspinid))
@@ -341,7 +343,7 @@ def stopspinning(*args):
     spinspeed=500
     spinnything.configure(text="")
     root.after_cancel(spinning_id)
-    afspinid=root.after(500,afterspinsync,'')
+    afspinid=root.after(500,postqsysync,'')
 #    if VFOSLINKED():
 #        ITF(ifreq.get())
 
@@ -547,6 +549,7 @@ def SIMPLECMD(byt):
                 thisvfo = round(thisvfo - .5,5)
 
         CHFREQ('r',thisvfo)
+        postqsysync()
 
     elif (byt == 7 or byt == 8):
         mhz = int(thisvfo)
@@ -578,6 +581,7 @@ def SIMPLECMD(byt):
 
         thisvfo = round(float(jmpband + remmhz),5)
         CHFREQ('r',thisvfo)
+        postqsysync()
 
     elif (byt == 10):
         print ("DO NOT USE 10 FOR SIMPLECMD - USE CHFREQ INSTEAD")
@@ -585,6 +589,7 @@ def SIMPLECMD(byt):
         Send(0,0,0,0,byt)
 
 def CHFREQ(txrx,xfo):
+    global thisvfo
 
     freq=(str(xfo).strip())
     try:
@@ -602,12 +607,13 @@ def CHFREQ(txrx,xfo):
     b3=int((freq[5:7]),16)
     b4=int((freq[7:9]),16)
     # 12.345.67 becomes hex 67|45|23|01|0B 
-    co=int('0B',16)
+    #co=int('0B',16)
     Send(b4,b3,b2,b1,10)
 
     if (txrx == 'r'):
         ifreq.delete(0,END)
         ifreq.insert(0,str('%7.5f' % (xfo)))
+        thisvfo=xfo
 
     if (txrx == 't'):
         itfreq.delete(0,END)
